@@ -1,0 +1,48 @@
+# 기본 설정
+title: DevYulBae Tech
+description: AI/ML Engineer's Tech Blog
+url: "https://devyulbae.github.io"
+baseurl: ""
+
+# 작성자 정보
+author:
+  name: Seongyul Bae
+  bio: AI/ML Engineer
+  avatar: /assets/images/profile.jpg
+  social:
+    github: https://github.com/devyulbae
+    linkedin: https://linkedin.com/in/devyulbae
+    instagram: https://instagram.com/xyul_00
+    email: mailto:your.email@example.com
+
+# 빌드 설정
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+# 플러그인 설정
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# 기본값 설정
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+
+# 테마 설정
+theme_config:
+  default_theme: dark    # 기본 테마 (dark, light, neon, blue 중 선택)
+
+# Include 설정 추가
+include:
+  - _pages 

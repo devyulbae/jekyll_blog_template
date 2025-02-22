@@ -1,0 +1,17 @@
+:root[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #252525;
+    --text-primary: #ffffff;
+    --text-secondary: #888888;
+    --accent-color: #FFD700;
+    --border-color: #333333;
+    --link-color: #FFD700;
+    --link-hover-color: #FFC000;
+    --code-bg: #2d2d2d;
+    --code-color: #ff6b6b;
+    --blockquote-border: #FFD700;
+    --table-border: #333333;
+    --table-stripe: #252525;
+    --scrollbar-thumb: #444444;
+    --scrollbar-track: #1a1a1a;
+} 

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-02-22T20:16:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">DevYulBae Tech</title><subtitle>AI/ML Engineer&apos;s Tech Blog</subtitle><author><name>Seongyul Bae</name></author><entry><title type="html">Jekyll 블로그 시작하기</title><link href="http://localhost:4000/jekyll/tutorial/test-page/" rel="alternate" type="text/html" title="Jekyll 블로그 시작하기" /><published>2025-02-22T12:00:00+09:00</published><updated>2025-02-22T12:00:00+09:00</updated><id>http://localhost:4000/jekyll/tutorial/test-page</id><content type="html" xml:base="http://localhost:4000/jekyll/tutorial/test-page/"><![CDATA[<h2 id="jekyll로-기술-블로그-시작하기">Jekyll로 기술 블로그 시작하기</h2>
+
+<p>Jekyll은 정적 사이트 생성기로, 마크다운으로 작성된 컨텐츠를 HTML로 변환해주는 강력한 도구입니다. GitHub Pages와 완벽하게 통합되어 있어 개발자들 사이에서 인기가 높습니다.</p>
+
+<h3 id="마크다운-문법-예시">마크다운 문법 예시</h3>
+
+<h4 id="1-코드-블록">1. 코드 블록</h4>]]></content><author><name>Seongyul Bae</name></author><category term="Jekyll" /><category term="Tutorial" /><category term="jekyll" /><category term="blog" /><category term="markdown" /><category term="github-pages" /><summary type="html"><![CDATA[Jekyll로 기술 블로그 시작하기]]></summary></entry></feed>

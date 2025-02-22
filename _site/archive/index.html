@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevYulBae Tech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/themes/dark.css">
+    <link rel="stylesheet" href="/assets/css/themes/light.css">
+    <link rel="stylesheet" href="/assets/css/themes/neon.css">
+    <link rel="stylesheet" href="/assets/css/themes/blue.css">
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // config에서 설정한 default_theme 가져오기 (없으면 'dark'로 설정)
+    const defaultTheme = 'dark' || 'dark';
+    
+    // localStorage에 저장된 테마가 없으면 default_theme 사용
+    const savedTheme = localStorage.getItem('default_theme');
+    const themeToApply = savedTheme || defaultTheme;
+    
+    // data-theme 속성 설정
+    document.documentElement.setAttribute('data-theme', themeToApply);
+    console.log('Initial theme:', themeToApply);
+});
+
+function toggleTheme() {
+    const themes = ['dark', 'light', 'blue', 'neon'];
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    
+    let currentIndex = themes.indexOf(currentTheme);
+    if (currentIndex === -1) currentIndex = 0;
+    
+    const nextIndex = (currentIndex + 1) % themes.length;
+    const newTheme = themes[nextIndex];
+    
+    console.log('Switching from', currentTheme, 'to', newTheme);
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+}
+</script>
+
+</head>
+<body>
+    <div class="layout">
+        <header class="header">
+            <nav class="nav-container">
+    <div class="nav-brand">
+        <a href="/">DevYulBae Tech</a>
+    </div>
+    <div class="nav-links">
+        <a href="/about">About</a>
+        <a href="/categories">Categories</a>
+        <a href="/tags">Tags</a>
+        <a href="/archive">Archive</a>
+        <button onclick="toggleTheme()" class="theme-toggle">🌓</button>
+    </div>
+</nav> 
+        </header>
+        
+        <div class="main-container">
+            <aside class="left-sidebar">
+                <div class="sidebar-content">
+    <div class="profile">
+        <img src="/assets/images/profile.jpg" alt="Seongyul Bae" class="profile-image">
+        <h2 class="profile-name">Seongyul Bae</h2>
+        <p class="profile-bio">AI/ML Engineer</p>
+        <div class="social-links">
+            
+            <a href="https://github.com/devyulbae"><i class="fab fa-github"></i></a>
+            
+            
+            <a href="https://linkedin.com/in/devyulbae"><i class="fab fa-linkedin"></i></a>
+            
+            
+            <a href="https://instagram.com/xyul_00"><i class="fab fa-instagram"></i></a>
+            
+        </div>
+    </div>
+    
+    
+</div> 
+            </aside>
+            
+            <main class="main-content">
+                <article class="page">
+    <div class="page-content">
+        
+<h2 id="2025">2025</h2>
+
+<ul>
+  <li>2025-02-22 » <a href="/jekyll/tutorial/test-page/">Jekyll 블로그 시작하기</a></li>
+</ul>
+
+
+    </div>
+</article> 
+            </main>
+        </div>
+        
+        <footer class="footer">
+            <div class="footer-content">
+    <div class="copyright">
+        © 2025 Seongyul Bae. All rights reserved.
+    </div>
+</div>
+
+        </footer>
+    </div>
+</body>
+</html> 
