@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마크다운 기본 문법 가이드 - DevYulBae</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/themes/dark.css">
+    <link rel="stylesheet" href="/assets/css/themes/light.css">
+    <link rel="stylesheet" href="/assets/css/themes/neon.css">
+    <link rel="stylesheet" href="/assets/css/themes/blue.css">
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // config에서 설정한 default_theme 가져오기 (없으면 'dark'로 설정)
+    const defaultTheme = 'dark' || 'dark';
+    
+    // localStorage에 저장된 테마가 없으면 default_theme 사용
+    const savedTheme = localStorage.getItem('default_theme');
+    const themeToApply = savedTheme || defaultTheme;
+    
+    // data-theme 속성 설정
+    document.documentElement.setAttribute('data-theme', themeToApply);
+    console.log('Initial theme:', themeToApply);
+});
+
+function toggleTheme() {
+    const themes = ['dark', 'light', 'blue', 'neon'];
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    
+    let currentIndex = themes.indexOf(currentTheme);
+    if (currentIndex === -1) currentIndex = 0;
+    
+    const nextIndex = (currentIndex + 1) % themes.length;
+    const newTheme = themes[nextIndex];
+    
+    console.log('Switching from', currentTheme, 'to', newTheme);
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+}
+</script>
+
+</head>
+<body>
+    <div class="layout">
+        <header class="header">
+            <nav class="nav-container">
+    <div class="nav-brand">
+        <a href="/">DevYulBae</a>
+    </div>
+    <div class="nav-links">
+        <a href="/about">About</a>
+        <a href="/categories">Categories</a>
+        <a href="/tags">Tags</a>
+        <a href="/archive">Archive</a>
+        <button onclick="toggleTheme()" class="theme-toggle">🌓</button>
+    </div>
+</nav> 
+        </header>
+        
+        <div class="main-container">
+            <aside class="left-sidebar">
+                <div class="sidebar-content">
+    <div class="profile">
+        <img src="/assets/images/profile.jpg" alt="Seongyul Bae" class="profile-image">
+        <h2 class="profile-name">Seongyul Bae</h2>
+        <p class="profile-bio">AI/ML Engineer</p>
+        <div class="social-links">
+            
+            <a href="https://github.com/devyulbae"><i class="fab fa-github"></i></a>
+            
+            
+            <a href="https://linkedin.com/in/devyulbae"><i class="fab fa-linkedin"></i></a>
+            
+            
+            <a href="https://instagram.com/xyul_00"><i class="fab fa-instagram"></i></a>
+            
+        </div>
+    </div>
+    
+    <div class="categories-section">
+        <h3>Categories</h3>
+        <ul class="categories-list">
+            
+            <li>
+                <a href="/categories#Guide">
+                    Guide
+                    <span class="post-count">(6)</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div> 
+            </aside>
+            
+            <main class="main-content">
+                <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">마크다운 기본 문법 가이드</h1>
+    <div class="post-meta">
+      <time datetime="2025-02-23T00:00:00+09:00">
+        2025-02-23
+      </time>
+      
+      <span class="post-categories">
+        in 
+        
+        <a href="/categories#guide">Guide</a>
+        
+        
+      </span>
+      
+    </div>
+  </header>
+
+  <div class="post-content">
+    <h1 id="마크다운-기본-문법-가이드">마크다운 기본 문법 가이드</h1>
+
+<p>블로그 포스트를 작성할 때 사용하는 기본적인 마크다운 문법을 알아봅시다.</p>
+
+<h2 id="1-제목-작성하기">1. 제목 작성하기</h2>
+
+<p>제목은 ‘#’ 기호를 사용하여 표시합니다. ‘#’의 개수로 제목의 크기를 조절할 수 있습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre># 제목 1
+## 제목 2
+### 제목 3
+#### 제목 4
+##### 제목 5
+###### 제목 6
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h1 id="제목-1">제목 1</h1>
+<h2 id="제목-2">제목 2</h2>
+<h3 id="제목-3">제목 3</h3>
+<h4 id="제목-4">제목 4</h4>
+<h5 id="제목-5">제목 5</h5>
+<h6 id="제목-6">제목 6</h6>
+
+<p><br /></p>
+
+<h2 id="2-텍스트-강조하기">2. 텍스트 강조하기</h2>
+
+<p>텍스트를 강조하는 여러 가지 방법이 있습니다:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>**굵게** 또는 __굵게__
+*기울임* 또는 _기울임_
+***굵은 기울임***
+~~취소선~~
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><strong>굵게</strong> 또는 <strong>굵게</strong>
+<em>기울임</em> 또는 <em>기울임</em>
+<strong><em>굵은 기울임</em></strong>
+<del>취소선</del></p>
+
+<p><br /></p>
+
+<h2 id="3-목록-만들기">3. 목록 만들기</h2>
+
+<p>순서가 있는 목록과 없는 목록을 만들 수 있습니다:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre>순서 없는 목록:
+- 사과
+  - 홍옥
+  - 양광
+- 배
+- 귤
+
+순서 있는 목록:
+1. 첫 번째
+2. 두 번째
+   1. 2-1
+   2. 2-2
+3. 세 번째
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>순서 없는 목록:</p>
+<ul>
+  <li>사과
+    <ul>
+      <li>홍옥</li>
+      <li>양광</li>
+    </ul>
+  </li>
+  <li>배</li>
+  <li>귤</li>
+</ul>
+
+<p>순서 있는 목록:</p>
+<ol>
+  <li>첫 번째</li>
+  <li>두 번째
+    <ol>
+      <li>2-1</li>
+      <li>2-2</li>
+    </ol>
+  </li>
+  <li>세 번째</li>
+</ol>
+
+<p><br /></p>
+
+<h2 id="4-링크와-이미지">4. 링크와 이미지</h2>
+
+<p>링크와 이미지는 다음과 같이 추가합니다:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>[구글 링크](https://google.com)
+![이미지 설명](이미지주소.jpg)
+
+참조 링크도 가능합니다:
+[참조 링크][ref]
+[ref]: https://github.com
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><a href="https://google.com">구글 링크</a>
+<img src="이미지주소.jpg" alt="이미지 설명" /></p>
+
+<p>참조 링크도 가능합니다:
+[참조 링크][ref]
+[ref]: https://github.com</p>
+
+<p><br /></p>
+
+<h2 id="5-인용구">5. 인용구</h2>
+
+<p>인용구는 ‘&gt;’ 기호를 사용합니다:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>&gt; 첫 번째 인용구
+&gt;&gt; 두 번째 인용구
+&gt;&gt;&gt; 세 번째 인용구
+</pre></td></tr></tbody></table></code></pre></div></div>
+<blockquote>
+  <p>첫 번째 인용구</p>
+  <blockquote>
+    <p>두 번째 인용구</p>
+    <blockquote>
+      <p>세 번째 인용구</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="6-코드-블록">6. 코드 블록</h2>
+
+<p>코드는 백틱(`)을 사용하여 표시합니다:</p>
+
+<p>인라인 코드는 <code class="language-plaintext highlighter-rouge">이렇게</code> 작성합니다.</p>
+
+<p>여러 줄의 코드 블록은:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, World!</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">return</span> <span class="bp">True</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="7-표-만들기">7. 표 만들기</h2>
+
+<p>표는 다음과 같이 작성합니다:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>| 이름 | 나이 | 직업 |
+|------|------|------|
+| 홍길동 | 20 | 학생 |
+| 김철수 | 30 | 회사원 |
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>| 이름 | 나이 | 직업 |
+|——|——|——|
+| 홍길동 | 20 | 학생 |
+| 김철수 | 30 | 회사원 |</p>
+
+<p><br /></p>
+
+<h2 id="8-수평선">8. 수평선</h2>
+
+<p>수평선은 하이픈, 별표, 언더스코어를 세 개 이상 나열하여 만듭니다:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>---
+***
+___
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<hr />
+<hr />
+<hr />
+
+<p><br /></p>
+
+<h2 id="9-각주">9. 각주</h2>
+
+<p>각주를 사용하면 문서 하단에 추가 설명을 달 수 있습니다:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>각주를 달고 싶은 문장[^1]
+
+[^1]: 각주에 대한 설명을 여기에 작성합니다.
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>각주를 달고 싶은 문장<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></p>
+
+<p><br /></p>
+
+<h2 id="마치며">마치며</h2>
+
+<p>이제 마크다운의 기본적인 문법을 배웠습니다. 이 문법들을 활용하여 보다 풍부한 블로그 포스트를 작성해보세요!</p>
+
+<p><br /><br /><br /></p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>각주에 대한 설명을 여기에 작성합니다. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+  
+  <footer class="post-footer">
+    <div class="post-tags">
+      
+      <a href="/tags#markdown" class="post-tag">#markdown</a>
+      
+      <a href="/tags#writing" class="post-tag">#writing</a>
+      
+    </div>
+  </footer>
+  
+</article> 
+            </main>
+        </div>
+        
+        <footer class="footer">
+            <div class="footer-content">
+    <div class="footer-sections">
+        <div class="footer-row">
+            <div class="footer-social">
+                <div class="social-links">
+                    
+                    <a href="https://github.com/devyulbae" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    
+                    
+                    <a href="https://linkedin.com/in/devyulbae" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    
+                    
+                    <a href="https://instagram.com/xyul_00" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="footer-info">
+                <p>© 2025 Seongyul Bae · Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </footer>
+    </div>
+    <!-- MathJax -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html> 

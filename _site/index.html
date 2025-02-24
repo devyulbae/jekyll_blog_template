@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevYulBae Tech</title>
+    <title>DevYulBae</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/themes/dark.css">
@@ -47,7 +47,7 @@ function toggleTheme() {
         <header class="header">
             <nav class="nav-container">
     <div class="nav-brand">
-        <a href="/">DevYulBae Tech</a>
+        <a href="/">DevYulBae</a>
     </div>
     <div class="nav-links">
         <a href="/about">About</a>
@@ -79,7 +79,19 @@ function toggleTheme() {
         </div>
     </div>
     
-    
+    <div class="categories-section">
+        <h3>Categories</h3>
+        <ul class="categories-list">
+            
+            <li>
+                <a href="/categories#Guide">
+                    Guide
+                    <span class="post-count">(6)</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
 </div> 
             </aside>
             
@@ -103,17 +115,89 @@ function toggleTheme() {
             <article class="post-card">
                 <div class="post-card-content">
                     <h3 class="post-title">
-                        <a href="/jekyll/tutorial/test-page/">Jekyll 블로그 시작하기</a>
+                        <a href="/guide/code-highlighting-guide/">코드 하이라이팅 가이드</a>
                     </h3>
                     <div class="post-meta">
-                        <span class="post-date">2025-02-22</span>
+                        <span class="post-date">2025-02-23</span>
                         
                         <span class="post-category">
-                            <i class="fas fa-folder"></i> Jekyll
+                            <i class="fas fa-folder"></i> Guide
                         </span>
                         
                     </div>
-                    <p class="post-excerpt">Jekyll로 기술 블로그 시작하기
+                    <p class="post-excerpt">코드 하이라이팅 가이드
+</p>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                <div class="post-card-content">
+                    <h3 class="post-title">
+                        <a href="/guide/image-guide/">블로그에 이미지 추가하기</a>
+                    </h3>
+                    <div class="post-meta">
+                        <span class="post-date">2025-02-23</span>
+                        
+                        <span class="post-category">
+                            <i class="fas fa-folder"></i> Guide
+                        </span>
+                        
+                    </div>
+                    <p class="post-excerpt">블로그에 이미지 추가하기
+</p>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                <div class="post-card-content">
+                    <h3 class="post-title">
+                        <a href="/guide/markdown-basic-guide/">마크다운 기본 문법 가이드</a>
+                    </h3>
+                    <div class="post-meta">
+                        <span class="post-date">2025-02-23</span>
+                        
+                        <span class="post-category">
+                            <i class="fas fa-folder"></i> Guide
+                        </span>
+                        
+                    </div>
+                    <p class="post-excerpt">마크다운 기본 문법 가이드
+</p>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                <div class="post-card-content">
+                    <h3 class="post-title">
+                        <a href="/guide/math-symbols/">자주 사용하는 수학 기호 모음</a>
+                    </h3>
+                    <div class="post-meta">
+                        <span class="post-date">2025-02-23</span>
+                        
+                        <span class="post-category">
+                            <i class="fas fa-folder"></i> Guide
+                        </span>
+                        
+                    </div>
+                    <p class="post-excerpt">자주 사용하는 수학 기호 모음
+</p>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                <div class="post-card-content">
+                    <h3 class="post-title">
+                        <a href="/guide/mathjax-guide/">MathJax로 수식 작성하기</a>
+                    </h3>
+                    <div class="post-meta">
+                        <span class="post-date">2025-02-23</span>
+                        
+                        <span class="post-category">
+                            <i class="fas fa-folder"></i> Guide
+                        </span>
+                        
+                    </div>
+                    <p class="post-excerpt">MathJax로 수식 작성하기
 </p>
                 </div>
             </article>
@@ -125,13 +209,12 @@ function toggleTheme() {
 <!-- GitHub Calendar CSS -->
 <link rel="stylesheet" href="https://unpkg.com/github-calendar/dist/github-calendar-responsive.css"/>
 
-<!-- GitHub Calendar JavaScript -->
-<script src="https://unpkg.com/github-calendar/dist/github-calendar.min.js"></script>
-
 <!-- 커스텀 툴팁 div 추가 -->
 <div id="contribution-tooltip" class="contribution-tooltip" style="display: none;"></div>
 
-<!-- Calendar 초기화 스크립트 -->
+<!-- GitHub Calendar JavaScript -->
+<script src="https://unpkg.com/github-calendar/dist/github-calendar.min.js"></script>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const tooltip = document.getElementById('contribution-tooltip');
@@ -139,62 +222,74 @@ function toggleTheme() {
         // GitHub Calendar 초기화
         GitHubCalendar(".calendar", "devyulbae", {
             responsive: true
-        });
-
-        // DOM 변화 감지를 위한 MutationObserver 설정
-        const observer = new MutationObserver((mutations, obs) => {
-            const days = document.querySelectorAll('rect.ContributionCalendar-day');
+        }).then(() => {
+            // 캘린더가 로드된 후에 이벤트 리스너 추가
+            const days = document.querySelectorAll('.ContributionCalendar-day');
             
-            if (days.length > 0) {
-                days.forEach(day => {
-                    day.addEventListener('mouseenter', (e) => {
-                        const count = day.getAttribute('data-count');
-                        const date = day.getAttribute('data-date');
+            days.forEach(day => {
+                day.addEventListener('mouseenter', (e) => {
+                    const count = day.getAttribute('data-count');
+                    const date = day.getAttribute('data-date');
+                    
+                    if (count && date) {
+                        const formattedDate = new Date(date).toLocaleDateString('ko-KR', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
                         
-                        if (count && date) {
-                            const formattedDate = new Date(date).toLocaleDateString('ko-KR', {
-                                year: 'numeric',
-                                month: 'long',
-                                day: 'numeric'
-                            });
-                            
-                            tooltip.textContent = `${formattedDate}: ${count}개의 기여`;
-                            tooltip.style.display = 'block';
-                            
-                            const rect = e.target.getBoundingClientRect();
-                            tooltip.style.left = `${rect.left + window.scrollX}px`;
-                            tooltip.style.top = `${rect.top + window.scrollY - 40}px`;
-                        }
-                    });
-
-                    day.addEventListener('mouseleave', () => {
-                        tooltip.style.display = 'none';
-                    });
+                        tooltip.textContent = `${formattedDate}: ${count}개의 기여`;
+                        tooltip.style.display = 'block';
+                        
+                        const rect = e.target.getBoundingClientRect();
+                        tooltip.style.left = `${rect.left + window.scrollX}px`;
+                        tooltip.style.top = `${rect.top + window.scrollY - 40}px`;
+                    }
                 });
-                
-                // 이벤트 리스너 추가 완료 후 observer 중지
-                obs.disconnect();
-            }
-        });
 
-        // calendar 요소의 변화 감지 시작
-        observer.observe(document.querySelector('.calendar'), {
-            childList: true,
-            subtree: true
+                day.addEventListener('mouseleave', () => {
+                    tooltip.style.display = 'none';
+                });
+            });
         });
     });
-</script> 
+</script>
             </main>
         </div>
         
         <footer class="footer">
             <div class="footer-content">
-    <div class="copyright">
-        © 2025 Seongyul Bae. All rights reserved.
+    <div class="footer-sections">
+        <div class="footer-row">
+            <div class="footer-social">
+                <div class="social-links">
+                    
+                    <a href="https://github.com/devyulbae" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    
+                    
+                    <a href="https://linkedin.com/in/devyulbae" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    
+                    
+                    <a href="https://instagram.com/xyul_00" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="footer-info">
+                <p>© 2025 Seongyul Bae · Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a></p>
+            </div>
+        </div>
     </div>
 </div>
 
         </footer>
     </div>
+    <!-- MathJax -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html> 

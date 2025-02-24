@@ -1,7 +1,963 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-02-22T20:16:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">DevYulBae Tech</title><subtitle>AI/ML Engineer&apos;s Tech Blog</subtitle><author><name>Seongyul Bae</name></author><entry><title type="html">Jekyll 블로그 시작하기</title><link href="http://localhost:4000/jekyll/tutorial/test-page/" rel="alternate" type="text/html" title="Jekyll 블로그 시작하기" /><published>2025-02-22T12:00:00+09:00</published><updated>2025-02-22T12:00:00+09:00</updated><id>http://localhost:4000/jekyll/tutorial/test-page</id><content type="html" xml:base="http://localhost:4000/jekyll/tutorial/test-page/"><![CDATA[<h2 id="jekyll로-기술-블로그-시작하기">Jekyll로 기술 블로그 시작하기</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-02-24T19:01:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">DevYulBae</title><subtitle>AI/ML Engineer&apos;s Tech Blog</subtitle><author><name>Seongyul Bae</name></author><entry><title type="html">코드 하이라이팅 가이드</title><link href="http://localhost:4000/guide/code-highlighting-guide/" rel="alternate" type="text/html" title="코드 하이라이팅 가이드" /><published>2025-02-23T00:00:00+09:00</published><updated>2025-02-23T00:00:00+09:00</updated><id>http://localhost:4000/guide/code-highlighting-guide</id><content type="html" xml:base="http://localhost:4000/guide/code-highlighting-guide/"><![CDATA[<h1 id="코드-하이라이팅-가이드">코드 하이라이팅 가이드</h1>
 
-<p>Jekyll은 정적 사이트 생성기로, 마크다운으로 작성된 컨텐츠를 HTML로 변환해주는 강력한 도구입니다. GitHub Pages와 완벽하게 통합되어 있어 개발자들 사이에서 인기가 높습니다.</p>
+<p>블로그에서 코드를 보기 좋게 표시하는 방법을 알아봅시다.</p>
 
-<h3 id="마크다운-문법-예시">마크다운 문법 예시</h3>
+<h2 id="1-인라인-코드-표시하기">1. 인라인 코드 표시하기</h2>
 
-<h4 id="1-코드-블록">1. 코드 블록</h4>]]></content><author><name>Seongyul Bae</name></author><category term="Jekyll" /><category term="Tutorial" /><category term="jekyll" /><category term="blog" /><category term="markdown" /><category term="github-pages" /><summary type="html"><![CDATA[Jekyll로 기술 블로그 시작하기]]></summary></entry></feed>
+<p>문장 중간에 코드를 넣을 때는 백틱(`)으로 감싸면 됩니다. 예를 들어 <code class="language-plaintext highlighter-rouge">print("Hello World")</code> 처럼 표시됩니다.</p>
+
+<h2 id="2-코드-블록-만들기">2. 코드 블록 만들기</h2>
+
+<p>여러 줄의 코드를 표시할 때는 세 개의 백틱을 사용합니다. 언어를 명시하면 해당 언어에 맞는 구문 강조가 적용됩니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, World!</span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="3-지원하는-언어-목록">3. 지원하는 언어 목록</h2>
+
+<p>Rouge 구문 강조기는 다음과 같은 프로그래밍 언어를 지원합니다:</p>
+<ul>
+  <li>Python (python, py)</li>
+  <li>JavaScript (javascript, js)</li>
+  <li>Ruby (ruby, rb)</li>
+  <li>Java (java)</li>
+  <li>C++ (cpp)</li>
+  <li>CSS (css)</li>
+  <li>HTML (html)</li>
+  <li>YAML (yaml, yml)</li>
+  <li>SQL (sql)</li>
+  <li>Shell Script (bash, sh)</li>
+</ul>
+
+<h2 id="4-줄-번호-표시하기">4. 줄 번호 표시하기</h2>
+
+<p>코드 블록에 줄 번호를 추가하려면 다음과 같이 작성합니다:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="5-특정-줄-강조하기">5. 특정 줄 강조하기</h2>
+
+<p>코드의 특정 줄을 강조하고 싶을 때는 다음과 같이 작성합니다:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">important_function</span><span class="p">():</span>
+    <span class="c1"># 이 줄이 강조됩니다
+</span>    <span class="nf">critical_operation</span><span class="p">()</span>
+    <span class="k">return</span> <span class="bp">True</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="6-파일명-표시하기">6. 파일명 표시하기</h2>
+
+<p>코드 블록 위에 파일명을 표시하고 싶을 때는 다음과 같이 작성합니다:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="c1"># app.py
+</span><span class="kn">from</span> <span class="n">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="n">app</span> <span class="o">=</span> <span class="nc">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="7-긴-코드-줄-처리">7. 긴 코드 줄 처리</h2>
+
+<p>화면 너비를 벗어나는 긴 코드 줄은 자동으로 줄 바꿈되거나 가로 스크롤이 생깁니다:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">very_long_function_name_that_does_something_important</span><span class="p">(</span><span class="n">first_parameter</span><span class="p">,</span> <span class="n">second_parameter</span><span class="p">,</span> <span class="n">third_parameter</span><span class="p">,</span> <span class="n">fourth_parameter</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sh">"</span><span class="s">This is a very long line of code that demonstrates how long lines are handled</span><span class="sh">"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="8-코드-블록-스타일링">8. 코드 블록 스타일링</h2>
+
+<p>코드 블록의 배경색, 글자색, 폰트 등을 커스텀하는 방법도 있습니다. _sass 디렉토리의 설정을 통해 변경할 수 있습니다.</p>
+
+<h2 id="마치며">마치며</h2>
+
+<p>이렇게 코드 하이라이팅을 활용하면 코드를 보기 좋게 표시할 수 있습니다. 프로그래밍 관련 포스트를 작성할 때 유용하게 사용해보세요.</p>]]></content><author><name>Seongyul Bae</name></author><category term="Guide" /><category term="code" /><category term="syntax-highlighting" /><category term="rouge" /><summary type="html"><![CDATA[코드 하이라이팅 가이드]]></summary></entry><entry><title type="html">블로그에 이미지 추가하기</title><link href="http://localhost:4000/guide/image-guide/" rel="alternate" type="text/html" title="블로그에 이미지 추가하기" /><published>2025-02-23T00:00:00+09:00</published><updated>2025-02-23T00:00:00+09:00</updated><id>http://localhost:4000/guide/image-guide</id><content type="html" xml:base="http://localhost:4000/guide/image-guide/"><![CDATA[<h1 id="블로그에-이미지-추가하기">블로그에 이미지 추가하기</h1>
+
+<p>이 포스트에서는 블로그에 이미지를 추가하고 관리하는 방법을 설명합니다.</p>
+
+<h2 id="1-기본적인-이미지-추가">1. 기본적인 이미지 추가</h2>
+
+<p>마크다운에서 이미지를 추가하는 기본적인 문법과 상대 경로, 절대 경로의 차이점을 설명합니다.</p>
+
+<h2 id="2-assets-폴더-구조">2. assets 폴더 구조</h2>
+
+<p>이미지 파일을 효율적으로 관리하기 위한 assets 폴더 구조와 조직화 방법을 설명합니다.</p>
+
+<h2 id="3-이미지-크기-조절">3. 이미지 크기 조절</h2>
+
+<p>이미지의 크기를 조절하는 여러 가지 방법을 설명합니다. HTML 태그를 사용하거나 CSS를 활용하는 방법을 소개합니다.</p>
+
+<h2 id="4-이미지-정렬">4. 이미지 정렬</h2>
+
+<p>이미지를 왼쪽, 가운데, 오른쪽으로 정렬하는 방법을 설명합니다.</p>
+
+<h2 id="5-이미지-캡션-추가">5. 이미지 캡션 추가</h2>
+
+<p>이미지 아래에 캡션을 추가하는 여러 가지 방법을 설명합니다.</p>
+
+<h2 id="6-이미지-최적화">6. 이미지 최적화</h2>
+
+<p>블로그 로딩 속도 개선을 위한 이미지 최적화 방법을 설명합니다.</p>
+
+<h2 id="7-이미지-대체-텍스트">7. 이미지 대체 텍스트</h2>
+
+<p>접근성 향상을 위한 대체 텍스트 작성 방법과 중요성을 설명합니다.</p>
+
+<h2 id="8-반응형-이미지">8. 반응형 이미지</h2>
+
+<p>다양한 화면 크기에 대응하는 반응형 이미지 설정 방법을 설명합니다.</p>
+
+<h2 id="9-이미지-갤러리-만들기">9. 이미지 갤러리 만들기</h2>
+
+<p>여러 이미지를 갤러리 형태로 표시하는 방법을 설명합니다.</p>
+
+<h2 id="마치며">마치며</h2>
+
+<p>이상으로 블로그에 이미지를 추가하고 관리하는 방법을 알아보았습니다. 이 가이드를 통해 더 시각적으로 풍부한 블로그 포스트를 작성할 수 있습니다.</p>]]></content><author><name>Seongyul Bae</name></author><category term="Guide" /><category term="image" /><category term="markdown" /><category term="assets" /><summary type="html"><![CDATA[블로그에 이미지 추가하기]]></summary></entry><entry><title type="html">마크다운 기본 문법 가이드</title><link href="http://localhost:4000/guide/markdown-basic-guide/" rel="alternate" type="text/html" title="마크다운 기본 문법 가이드" /><published>2025-02-23T00:00:00+09:00</published><updated>2025-02-23T00:00:00+09:00</updated><id>http://localhost:4000/guide/markdown-basic-guide</id><content type="html" xml:base="http://localhost:4000/guide/markdown-basic-guide/"><![CDATA[<h1 id="마크다운-기본-문법-가이드">마크다운 기본 문법 가이드</h1>
+
+<p>블로그 포스트를 작성할 때 사용하는 기본적인 마크다운 문법을 알아봅시다.</p>
+
+<h2 id="1-제목-작성하기">1. 제목 작성하기</h2>
+
+<p>제목은 ‘#’ 기호를 사용하여 표시합니다. ‘#’의 개수로 제목의 크기를 조절할 수 있습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre># 제목 1
+## 제목 2
+### 제목 3
+#### 제목 4
+##### 제목 5
+###### 제목 6
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h1 id="제목-1">제목 1</h1>
+<h2 id="제목-2">제목 2</h2>
+<h3 id="제목-3">제목 3</h3>
+<h4 id="제목-4">제목 4</h4>
+<h5 id="제목-5">제목 5</h5>
+<h6 id="제목-6">제목 6</h6>
+
+<p><br /></p>
+
+<h2 id="2-텍스트-강조하기">2. 텍스트 강조하기</h2>
+
+<p>텍스트를 강조하는 여러 가지 방법이 있습니다:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>**굵게** 또는 __굵게__
+*기울임* 또는 _기울임_
+***굵은 기울임***
+~~취소선~~
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><strong>굵게</strong> 또는 <strong>굵게</strong>
+<em>기울임</em> 또는 <em>기울임</em>
+<strong><em>굵은 기울임</em></strong>
+<del>취소선</del></p>
+
+<p><br /></p>
+
+<h2 id="3-목록-만들기">3. 목록 만들기</h2>
+
+<p>순서가 있는 목록과 없는 목록을 만들 수 있습니다:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre>순서 없는 목록:
+- 사과
+  - 홍옥
+  - 양광
+- 배
+- 귤
+
+순서 있는 목록:
+1. 첫 번째
+2. 두 번째
+   1. 2-1
+   2. 2-2
+3. 세 번째
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>순서 없는 목록:</p>
+<ul>
+  <li>사과
+    <ul>
+      <li>홍옥</li>
+      <li>양광</li>
+    </ul>
+  </li>
+  <li>배</li>
+  <li>귤</li>
+</ul>
+
+<p>순서 있는 목록:</p>
+<ol>
+  <li>첫 번째</li>
+  <li>두 번째
+    <ol>
+      <li>2-1</li>
+      <li>2-2</li>
+    </ol>
+  </li>
+  <li>세 번째</li>
+</ol>
+
+<p><br /></p>
+
+<h2 id="4-링크와-이미지">4. 링크와 이미지</h2>
+
+<p>링크와 이미지는 다음과 같이 추가합니다:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>[구글 링크](https://google.com)
+![이미지 설명](이미지주소.jpg)
+
+참조 링크도 가능합니다:
+[참조 링크][ref]
+[ref]: https://github.com
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><a href="https://google.com">구글 링크</a>
+<img src="이미지주소.jpg" alt="이미지 설명" /></p>
+
+<p>참조 링크도 가능합니다:
+[참조 링크][ref]
+[ref]: https://github.com</p>
+
+<p><br /></p>
+
+<h2 id="5-인용구">5. 인용구</h2>
+
+<p>인용구는 ‘&gt;’ 기호를 사용합니다:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>&gt; 첫 번째 인용구
+&gt;&gt; 두 번째 인용구
+&gt;&gt;&gt; 세 번째 인용구
+</pre></td></tr></tbody></table></code></pre></div></div>
+<blockquote>
+  <p>첫 번째 인용구</p>
+  <blockquote>
+    <p>두 번째 인용구</p>
+    <blockquote>
+      <p>세 번째 인용구</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="6-코드-블록">6. 코드 블록</h2>
+
+<p>코드는 백틱(`)을 사용하여 표시합니다:</p>
+
+<p>인라인 코드는 <code class="language-plaintext highlighter-rouge">이렇게</code> 작성합니다.</p>
+
+<p>여러 줄의 코드 블록은:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, World!</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">return</span> <span class="bp">True</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="7-표-만들기">7. 표 만들기</h2>
+
+<p>표는 다음과 같이 작성합니다:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>| 이름 | 나이 | 직업 |
+|------|------|------|
+| 홍길동 | 20 | 학생 |
+| 김철수 | 30 | 회사원 |
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>| 이름 | 나이 | 직업 |
+|——|——|——|
+| 홍길동 | 20 | 학생 |
+| 김철수 | 30 | 회사원 |</p>
+
+<p><br /></p>
+
+<h2 id="8-수평선">8. 수평선</h2>
+
+<p>수평선은 하이픈, 별표, 언더스코어를 세 개 이상 나열하여 만듭니다:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>---
+***
+___
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<hr />
+<hr />
+<hr />
+
+<p><br /></p>
+
+<h2 id="9-각주">9. 각주</h2>
+
+<p>각주를 사용하면 문서 하단에 추가 설명을 달 수 있습니다:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>각주를 달고 싶은 문장[^1]
+
+[^1]: 각주에 대한 설명을 여기에 작성합니다.
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>각주를 달고 싶은 문장<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></p>
+
+<p><br /></p>
+
+<h2 id="마치며">마치며</h2>
+
+<p>이제 마크다운의 기본적인 문법을 배웠습니다. 이 문법들을 활용하여 보다 풍부한 블로그 포스트를 작성해보세요!</p>
+
+<p><br /><br /><br /></p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>각주에 대한 설명을 여기에 작성합니다. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>Seongyul Bae</name></author><category term="Guide" /><category term="markdown" /><category term="writing" /><summary type="html"><![CDATA[마크다운 기본 문법 가이드]]></summary></entry><entry><title type="html">자주 사용하는 수학 기호 모음</title><link href="http://localhost:4000/guide/math-symbols/" rel="alternate" type="text/html" title="자주 사용하는 수학 기호 모음" /><published>2025-02-23T00:00:00+09:00</published><updated>2025-02-23T00:00:00+09:00</updated><id>http://localhost:4000/guide/math-symbols</id><content type="html" xml:base="http://localhost:4000/guide/math-symbols/"><![CDATA[<h1 id="자주-사용하는-수학-기호-모음">자주 사용하는 수학 기호 모음</h1>
+
+<h2 id="1-기본-연산자">1. 기본 연산자</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>LaTeX 코드</th>
+      <th>수식</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">+</code></td>
+      <td>\(+\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-</code></td>
+      <td>\(-\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\times</code></td>
+      <td>\(\times\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\cdot</code></td>
+      <td>\(\cdot\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\div</code></td>
+      <td>\(\div\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/</code></td>
+      <td>\(/\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\pm</code></td>
+      <td>\(\pm\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\mp</code></td>
+      <td>\(\mp\)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="2-관계-연산자">2. 관계 연산자</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>LaTeX 코드</th>
+      <th>수식</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">=</code></td>
+      <td>\(=\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\neq</code></td>
+      <td>\(\neq\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\approx</code></td>
+      <td>\(\approx\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\equiv</code></td>
+      <td>\(\equiv\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\propto</code></td>
+      <td>\(\propto\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;</code></td>
+      <td>\(&lt;\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&gt;</code></td>
+      <td>\(&gt;\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\leq</code></td>
+      <td>\(\leq\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\geq</code></td>
+      <td>\(\geq\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\ll</code></td>
+      <td>\(\ll\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\gg</code></td>
+      <td>\(\gg\)</td>
+    </tr>
+  </tbody>
+</table>]]></content><author><name>Seongyul Bae</name></author><category term="Guide" /><category term="mathjax" /><category term="mathematics" /><category term="symbols" /><summary type="html"><![CDATA[자주 사용하는 수학 기호 모음]]></summary></entry><entry><title type="html">MathJax로 수식 작성하기</title><link href="http://localhost:4000/guide/mathjax-guide/" rel="alternate" type="text/html" title="MathJax로 수식 작성하기" /><published>2025-02-23T00:00:00+09:00</published><updated>2025-02-23T00:00:00+09:00</updated><id>http://localhost:4000/guide/mathjax-guide</id><content type="html" xml:base="http://localhost:4000/guide/mathjax-guide/"><![CDATA[<h1 id="mathjax로-수식-작성하기">MathJax로 수식 작성하기</h1>
+
+<p>블로그에서 수학 수식을 작성하는 방법을 알아봅시다.</p>
+
+<h2 id="1-인라인-수식">1. 인라인 수식</h2>
+
+<p>문장 중간에 수식을 넣을 때도 <code class="language-plaintext highlighter-rouge">$$...$$</code> 를 사용합니다.</p>
+
+<p>예시:</p>
+<ul>
+  <li>질량-에너지 등가식 \(E = mc^2\) 처럼 간단한 수식</li>
+  <li>피타고라스의 정리 \(a^2 + b^2 = c^2\)</li>
+  <li>제곱근은 \(\sqrt{2}\) 처럼 표현</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="2-디스플레이-수식">2. 디스플레이 수식</h2>
+
+<p>별도의 줄에 수식을 크게 표시할 때도 동일하게 <code class="language-plaintext highlighter-rouge">$$...$$</code> 를 사용합니다.</p>
+
+<p>예시:</p>
+
+\[\frac{-b \pm \sqrt{b^2-4ac}}{2a}\]
+
+\[e^{i\pi} + 1 = 0\]
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>$$
+\frac{-b \pm \sqrt{b^2-4ac}}{2a}
+$$
+
+$$
+e^{i\pi} + 1 = 0
+$$
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="3-분수와-지수">3. 분수와 지수</h2>
+
+<p>분수와 지수는 다음과 같이 작성합니다:</p>
+
+\[y = \frac{1}{2}x^2 + \frac{x}{3} + \frac{1}{4}\]
+
+<p>중첩된 분수도 가능합니다:</p>
+
+\[\frac{1}{\frac{1}{2} + \frac{1}{3}}\]
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>$$
+y = \frac{1}{2}x^2 + \frac{x}{3} + \frac{1}{4}
+$$
+
+$$
+\frac{1}{\frac{1}{2} + \frac{1}{3}}
+$$
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="4-시그마와-적분">4. 시그마와 적분</h2>
+
+<p>시그마와 적분은 다음과 같이 표현합니다:</p>
+
+<p>시그마:</p>
+
+\[\sum_{i=1}^{n} i = \frac{n(n+1)}{2}\]
+
+<p>적분:</p>
+
+\[\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}\]
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>$$
+\sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+$$
+
+$$
+\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+$$
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="5-행렬">5. 행렬</h2>
+
+<p>행렬은 다음과 같이 작성합니다:</p>
+
+\[\begin{pmatrix}
+a &amp; b \\
+c &amp; d
+\end{pmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix} =
+\begin{bmatrix}
+ax + by \\
+cx + dy
+\end{bmatrix}\]
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>$$
+\begin{pmatrix}
+a &amp; b \\
+c &amp; d
+\end{pmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix} =
+\begin{bmatrix}
+ax + by \\
+cx + dy
+\end{bmatrix}
+$$
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="6-수학-기호-모음">6. 수학 기호 모음</h2>
+
+<p>자주 사용되는 수학 기호들:</p>
+
+<ul>
+  <li>그리스 문자: \(\alpha, \beta, \gamma, \theta, \pi\)</li>
+  <li>관계 연산자: \(\leq, \geq, \neq, \approx, \equiv\)</li>
+  <li>집합 기호: \(\in, \notin, \subset, \supset, \cup, \cap\)</li>
+  <li>화살표: \(\rightarrow, \leftarrow, \Rightarrow, \Leftarrow\)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>- 그리스 문자: $$\alpha, \beta, \gamma, \theta, \pi$$
+- 관계 연산자: $$\leq, \geq, \neq, \approx, \equiv$$
+- 집합 기호: $$\in, \notin, \subset, \supset, \cup, \cap$$
+- 화살표: $$\rightarrow, \leftarrow, \Rightarrow, \Leftarrow$$
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="7-여러-줄-수식">7. 여러 줄 수식</h2>
+
+<p>align 환경을 사용하여 여러 줄의 수식을 정렬할 수 있습니다:</p>
+
+\[\begin{align}
+(x+1)^2 &amp;= (x+1)(x+1) \\
+&amp;= x^2 + 2x + 1
+\end{align}\]
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>$$
+\begin{align}
+(x+1)^2 &amp;= (x+1)(x+1) \\
+&amp;= x^2 + 2x + 1
+\end{align}
+$$
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="8-케이스-분류">8. 케이스 분류</h2>
+
+<p>cases 환경으로 조건에 따른 다른 수식을 표현합니다:</p>
+
+\[|x| = \begin{cases}
+x &amp; \text{if } x \geq 0 \\
+-x &amp; \text{if } x &lt; 0
+\end{cases}\]
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>$$
+|x| = \begin{cases}
+x &amp; \text{if } x \geq 0 \\
+-x &amp; \text{if } x &lt; 0
+\end{cases}
+$$
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="9-색상-사용">9. 색상 사용</h2>
+
+<p>수식에 색상을 입힐 수 있습니다:</p>
+
+\[\color{red}{E} = \color{blue}{m}\color{green}{c^2}\]
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>$$
+\color{red}{E} = \color{blue}{m}\color{green}{c^2}
+$$
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="10-수식-번호-사용">10. 수식 번호 사용</h2>
+
+<p>수식에 번호를 붙이고 참조할 수 있습니다:</p>
+
+\[\begin{equation}
+\label{eq:einstein}
+E = mc^2
+\end{equation}\]
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>$$
+\begin{equation}
+\label{eq:einstein}
+E = mc^2
+\end{equation}
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="마치며">마치며</h2>
+
+<p>이제 MathJax를 사용하여 다양한 수학 수식을 표현할 수 있습니다. 수학이나 과학 관련 포스트를 작성할 때 유용하게 활용해보세요!</p>]]></content><author><name>Seongyul Bae</name></author><category term="Guide" /><category term="mathjax" /><category term="mathematics" /><category term="latex" /><summary type="html"><![CDATA[MathJax로 수식 작성하기]]></summary></entry><entry><title type="html">마크다운 표 스타일링 가이드</title><link href="http://localhost:4000/guide/table-style-guide/" rel="alternate" type="text/html" title="마크다운 표 스타일링 가이드" /><published>2025-02-23T00:00:00+09:00</published><updated>2025-02-23T00:00:00+09:00</updated><id>http://localhost:4000/guide/table-style-guide</id><content type="html" xml:base="http://localhost:4000/guide/table-style-guide/"><![CDATA[<h1 id="마크다운-표-스타일링-가이드">마크다운 표 스타일링 가이드</h1>
+
+<p>블로그에서 표를 더 예쁘고 효과적으로 사용하는 방법을 알아봅시다.</p>
+
+<h2 id="1-기본-표-만들기">1. 기본 표 만들기</h2>
+
+<p>기본적인 표 스타일입니다:</p>
+
+<p><img src="/assets/images/003_table_guide/01.png" alt="기본 표 스타일" /></p>
+
+<p>위 표를 만드는 코드입니다:</p>
+
+<hr />
+<p>| 제품명 | 가격 | 재고 |
+|——–|——|——|
+| 노트북 | 1,200,000원 | 5개 |
+| 스마트폰 | 800,000원 | 10개 |
+| 태블릿 | 500,000원 | 8개 |
+*****</p>
+
+<h2 id="2-정렬된-표-만들기">2. 정렬된 표 만들기</h2>
+
+<p>열마다 다른 정렬을 적용한 표입니다:</p>
+
+<p><img src="/assets/images/003_table_guide/02.png" alt="정렬된 표 스타일" /></p>
+
+<p>정렬을 지정하는 코드입니다:</p>
+
+<hr />
+<p>| 제품명 | 판매량 | 매출액 |
+|:——-|:——:|——–:|
+| 노트북 | 50대 | ₩60,000,000 |
+| 스마트폰 | 100대 | ₩80,000,000 |
+| 태블릿 | 80대 | ₩40,000,000 |
+*****</p>
+
+<h2 id="3-강조된-표-만들기">3. 강조된 표 만들기</h2>
+
+<p>중요한 정보를 강조 표시한 표입니다:</p>
+
+<p><img src="/assets/images/003_table_guide/03.png" alt="강조된 표 스타일" /></p>
+
+<p>강조 표를 만드는 HTML 코드입니다:</p>
+
+<hr />
+<table>
+  <tr>
+    <th>분기</th>
+    <th>목표</th>
+    <th>달성</th>
+    <th>달성률</th>
+  </tr>
+  <tr class="highlight">
+    <td>1분기</td>
+    <td>1,000만원</td>
+    <td>1,200만원</td>
+    <td>120%</td>
+  </tr>
+  <tr>
+    <td>2분기</td>
+    <td>1,500만원</td>
+    <td class="highlight">1,800만원</td>
+    <td>120%</td>
+  </tr>
+</table>
+<hr />
+
+<h2 id="4-크기가-다른-표-만들기">4. 크기가 다른 표 만들기</h2>
+
+<h3 id="41-작은-표">4.1 작은 표</h3>
+
+<p>간단한 정보를 위한 작은 표입니다:</p>
+
+<p><img src="/assets/images/003_table_guide/04.png" alt="작은 표 스타일" /></p>
+
+<hr />
+<table class="table-small">
+  <tr>
+    <th>날짜</th>
+    <th>일정</th>
+  </tr>
+  <tr>
+    <td>3월 1일</td>
+    <td>프로젝트 시작</td>
+  </tr>
+  <tr>
+    <td>3월 15일</td>
+    <td>중간 점검</td>
+  </tr>
+</table>
+<hr />
+
+<h3 id="42-큰-표">4.2 큰 표</h3>
+
+<p>상세한 정보를 위한 큰 표입니다:</p>
+
+<p><img src="/assets/images/003_table_guide/05.png" alt="큰 표 스타일" /></p>
+
+<hr />
+<table class="table-large">
+  <tr>
+    <th>프로젝트명</th>
+    <th>담당자</th>
+    <th>시작일</th>
+    <th>종료일</th>
+    <th>진행상태</th>
+  </tr>
+  <tr>
+    <td>웹사이트 리뉴얼</td>
+    <td>김철수</td>
+    <td>2025-01-01</td>
+    <td>2025-03-31</td>
+    <td>진행중</td>
+  </tr>
+</table>
+<hr />
+
+<h2 id="5-반응형-표-만들기">5. 반응형 표 만들기</h2>
+
+<h3 id="데스크톱-화면에서의-모습">데스크톱 화면에서의 모습:</h3>
+<p><img src="/assets/images/003_table_guide/06.png" alt="반응형 표 데스크톱" /></p>
+
+<h3 id="모바일-화면에서의-모습">모바일 화면에서의 모습:</h3>
+<p><img src="/assets/images/003_table_guide/07.png" alt="반응형 표 모바일" /></p>
+
+<p>반응형 표를 만드는 코드입니다:</p>
+
+<hr />
+<table class="responsive-table">
+  <tr>
+    <th>상품명</th>
+    <th>가격</th>
+    <th>할인율</th>
+    <th>할인가</th>
+  </tr>
+  <tr>
+    <td data-label="상품명">울트라 노트북</td>
+    <td data-label="가격">2,000,000원</td>
+    <td data-label="할인율">20%</td>
+    <td data-label="할인가">1,600,000원</td>
+  </tr>
+</table>
+<hr />
+
+<h2 id="css-스타일-모음">CSS 스타일 모음</h2>
+
+<p>모든 표 스타일링에 필요한 CSS 코드입니다:</p>
+
+<hr />
+<p>/* 기본 표 스타일 */
+table {
+    width: 100%;
+    margin: 1rem 0;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}</p>
+
+<p>/* 강조 스타일 */
+tr.highlight {
+    background-color: var(–highlight-bg);
+}</p>
+
+<p>td.highlight {
+    font-weight: bold;
+    color: var(–highlight-color);
+}</p>
+
+<p>/* 크기 변형 스타일 */
+.table-small {
+    width: 50%;
+    margin: 1rem auto;
+    font-size: 0.9em;
+}</p>
+
+<p>.table-large {
+    width: 100%;
+    margin: 1.5rem auto;
+    font-size: 1.2em;
+}</p>
+
+<p>/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .responsive-table thead {
+        display: none;
+    }</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre>.responsive-table td {
+    display: block;
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+}
+
+.responsive-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+} } *****
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="마치며">마치며</h2>
+
+<p>이제 다양한 상황에 맞는 표를 만들 수 있습니다. 각 예시의 실제 모습을 참고하여 원하는 스타일의 표를 만들어보세요!</p>]]></content><author><name>Seongyul Bae</name></author><category term="Guide" /><category term="markdown" /><category term="css" /><category term="table" /><summary type="html"><![CDATA[마크다운 표 스타일링 가이드]]></summary></entry></feed>

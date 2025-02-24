@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathJax로 수식 작성하기 - DevYulBae</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/themes/dark.css">
+    <link rel="stylesheet" href="/assets/css/themes/light.css">
+    <link rel="stylesheet" href="/assets/css/themes/neon.css">
+    <link rel="stylesheet" href="/assets/css/themes/blue.css">
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // config에서 설정한 default_theme 가져오기 (없으면 'dark'로 설정)
+    const defaultTheme = 'dark' || 'dark';
+    
+    // localStorage에 저장된 테마가 없으면 default_theme 사용
+    const savedTheme = localStorage.getItem('default_theme');
+    const themeToApply = savedTheme || defaultTheme;
+    
+    // data-theme 속성 설정
+    document.documentElement.setAttribute('data-theme', themeToApply);
+    console.log('Initial theme:', themeToApply);
+});
+
+function toggleTheme() {
+    const themes = ['dark', 'light', 'blue', 'neon'];
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    
+    let currentIndex = themes.indexOf(currentTheme);
+    if (currentIndex === -1) currentIndex = 0;
+    
+    const nextIndex = (currentIndex + 1) % themes.length;
+    const newTheme = themes[nextIndex];
+    
+    console.log('Switching from', currentTheme, 'to', newTheme);
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+}
+</script>
+
+</head>
+<body>
+    <div class="layout">
+        <header class="header">
+            <nav class="nav-container">
+    <div class="nav-brand">
+        <a href="/">DevYulBae</a>
+    </div>
+    <div class="nav-links">
+        <a href="/about">About</a>
+        <a href="/categories">Categories</a>
+        <a href="/tags">Tags</a>
+        <a href="/archive">Archive</a>
+        <button onclick="toggleTheme()" class="theme-toggle">🌓</button>
+    </div>
+</nav> 
+        </header>
+        
+        <div class="main-container">
+            <aside class="left-sidebar">
+                <div class="sidebar-content">
+    <div class="profile">
+        <img src="/assets/images/profile.jpg" alt="Seongyul Bae" class="profile-image">
+        <h2 class="profile-name">Seongyul Bae</h2>
+        <p class="profile-bio">AI/ML Engineer</p>
+        <div class="social-links">
+            
+            <a href="https://github.com/devyulbae"><i class="fab fa-github"></i></a>
+            
+            
+            <a href="https://linkedin.com/in/devyulbae"><i class="fab fa-linkedin"></i></a>
+            
+            
+            <a href="https://instagram.com/xyul_00"><i class="fab fa-instagram"></i></a>
+            
+        </div>
+    </div>
+    
+    <div class="categories-section">
+        <h3>Categories</h3>
+        <ul class="categories-list">
+            
+            <li>
+                <a href="/categories#Guide">
+                    Guide
+                    <span class="post-count">(6)</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div> 
+            </aside>
+            
+            <main class="main-content">
+                <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">MathJax로 수식 작성하기</h1>
+    <div class="post-meta">
+      <time datetime="2025-02-23T00:00:00+09:00">
+        2025-02-23
+      </time>
+      
+      <span class="post-categories">
+        in 
+        
+        <a href="/categories#guide">Guide</a>
+        
+        
+      </span>
+      
+    </div>
+  </header>
+
+  <div class="post-content">
+    <h1 id="mathjax로-수식-작성하기">MathJax로 수식 작성하기</h1>
+
+<p>블로그에서 수학 수식을 작성하는 방법을 알아봅시다.</p>
+
+<h2 id="1-인라인-수식">1. 인라인 수식</h2>
+
+<p>문장 중간에 수식을 넣을 때도 <code class="language-plaintext highlighter-rouge">$$...$$</code> 를 사용합니다.</p>
+
+<p>예시:</p>
+<ul>
+  <li>질량-에너지 등가식 \(E = mc^2\) 처럼 간단한 수식</li>
+  <li>피타고라스의 정리 \(a^2 + b^2 = c^2\)</li>
+  <li>제곱근은 \(\sqrt{2}\) 처럼 표현</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="2-디스플레이-수식">2. 디스플레이 수식</h2>
+
+<p>별도의 줄에 수식을 크게 표시할 때도 동일하게 <code class="language-plaintext highlighter-rouge">$$...$$</code> 를 사용합니다.</p>
+
+<p>예시:</p>
+
+\[\frac{-b \pm \sqrt{b^2-4ac}}{2a}\]
+
+\[e^{i\pi} + 1 = 0\]
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>$$
+\frac{-b \pm \sqrt{b^2-4ac}}{2a}
+$$
+
+$$
+e^{i\pi} + 1 = 0
+$$
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="3-분수와-지수">3. 분수와 지수</h2>
+
+<p>분수와 지수는 다음과 같이 작성합니다:</p>
+
+\[y = \frac{1}{2}x^2 + \frac{x}{3} + \frac{1}{4}\]
+
+<p>중첩된 분수도 가능합니다:</p>
+
+\[\frac{1}{\frac{1}{2} + \frac{1}{3}}\]
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>$$
+y = \frac{1}{2}x^2 + \frac{x}{3} + \frac{1}{4}
+$$
+
+$$
+\frac{1}{\frac{1}{2} + \frac{1}{3}}
+$$
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="4-시그마와-적분">4. 시그마와 적분</h2>
+
+<p>시그마와 적분은 다음과 같이 표현합니다:</p>
+
+<p>시그마:</p>
+
+\[\sum_{i=1}^{n} i = \frac{n(n+1)}{2}\]
+
+<p>적분:</p>
+
+\[\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}\]
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>$$
+\sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+$$
+
+$$
+\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+$$
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="5-행렬">5. 행렬</h2>
+
+<p>행렬은 다음과 같이 작성합니다:</p>
+
+\[\begin{pmatrix}
+a &amp; b \\
+c &amp; d
+\end{pmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix} =
+\begin{bmatrix}
+ax + by \\
+cx + dy
+\end{bmatrix}\]
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>$$
+\begin{pmatrix}
+a &amp; b \\
+c &amp; d
+\end{pmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix} =
+\begin{bmatrix}
+ax + by \\
+cx + dy
+\end{bmatrix}
+$$
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="6-수학-기호-모음">6. 수학 기호 모음</h2>
+
+<p>자주 사용되는 수학 기호들:</p>
+
+<ul>
+  <li>그리스 문자: \(\alpha, \beta, \gamma, \theta, \pi\)</li>
+  <li>관계 연산자: \(\leq, \geq, \neq, \approx, \equiv\)</li>
+  <li>집합 기호: \(\in, \notin, \subset, \supset, \cup, \cap\)</li>
+  <li>화살표: \(\rightarrow, \leftarrow, \Rightarrow, \Leftarrow\)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>- 그리스 문자: $$\alpha, \beta, \gamma, \theta, \pi$$
+- 관계 연산자: $$\leq, \geq, \neq, \approx, \equiv$$
+- 집합 기호: $$\in, \notin, \subset, \supset, \cup, \cap$$
+- 화살표: $$\rightarrow, \leftarrow, \Rightarrow, \Leftarrow$$
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="7-여러-줄-수식">7. 여러 줄 수식</h2>
+
+<p>align 환경을 사용하여 여러 줄의 수식을 정렬할 수 있습니다:</p>
+
+\[\begin{align}
+(x+1)^2 &amp;= (x+1)(x+1) \\
+&amp;= x^2 + 2x + 1
+\end{align}\]
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>$$
+\begin{align}
+(x+1)^2 &amp;= (x+1)(x+1) \\
+&amp;= x^2 + 2x + 1
+\end{align}
+$$
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="8-케이스-분류">8. 케이스 분류</h2>
+
+<p>cases 환경으로 조건에 따른 다른 수식을 표현합니다:</p>
+
+\[|x| = \begin{cases}
+x &amp; \text{if } x \geq 0 \\
+-x &amp; \text{if } x &lt; 0
+\end{cases}\]
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>$$
+|x| = \begin{cases}
+x &amp; \text{if } x \geq 0 \\
+-x &amp; \text{if } x &lt; 0
+\end{cases}
+$$
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="9-색상-사용">9. 색상 사용</h2>
+
+<p>수식에 색상을 입힐 수 있습니다:</p>
+
+\[\color{red}{E} = \color{blue}{m}\color{green}{c^2}\]
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>$$
+\color{red}{E} = \color{blue}{m}\color{green}{c^2}
+$$
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="10-수식-번호-사용">10. 수식 번호 사용</h2>
+
+<p>수식에 번호를 붙이고 참조할 수 있습니다:</p>
+
+\[\begin{equation}
+\label{eq:einstein}
+E = mc^2
+\end{equation}\]
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>$$
+\begin{equation}
+\label{eq:einstein}
+E = mc^2
+\end{equation}
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="마치며">마치며</h2>
+
+<p>이제 MathJax를 사용하여 다양한 수학 수식을 표현할 수 있습니다. 수학이나 과학 관련 포스트를 작성할 때 유용하게 활용해보세요!</p>
+
+  </div>
+
+  
+  <footer class="post-footer">
+    <div class="post-tags">
+      
+      <a href="/tags#mathjax" class="post-tag">#mathjax</a>
+      
+      <a href="/tags#mathematics" class="post-tag">#mathematics</a>
+      
+      <a href="/tags#latex" class="post-tag">#latex</a>
+      
+    </div>
+  </footer>
+  
+</article> 
+            </main>
+        </div>
+        
+        <footer class="footer">
+            <div class="footer-content">
+    <div class="footer-sections">
+        <div class="footer-row">
+            <div class="footer-social">
+                <div class="social-links">
+                    
+                    <a href="https://github.com/devyulbae" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    
+                    
+                    <a href="https://linkedin.com/in/devyulbae" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    
+                    
+                    <a href="https://instagram.com/xyul_00" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="footer-info">
+                <p>© 2025 Seongyul Bae · Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </footer>
+    </div>
+    <!-- MathJax -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html> 

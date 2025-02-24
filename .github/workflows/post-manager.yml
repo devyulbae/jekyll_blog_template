@@ -1,0 +1,39 @@
+name: Post Manager
+
+on:
+  push:
+    paths:
+      - '_posts/**'  # _posts 폴더의 변경사항이 있을 때만 실행
+    branches:
+      - main  # 또는 master
+
+jobs:
+  process-new-posts:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # 전체 히스토리 가져오기
+          
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml
+          
+      - name: Run post manager
+        run: python scripts/post_manager.py
+        
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add assets/images/
+          git commit -m "Auto-update images folder and posts.csv" || exit 0
+          git push 
