@@ -1,6 +1,0 @@
-@echo off
-echo Running Post Manager...
-python scripts/post_manager.py
-
-echo Starting Jekyll server...
-bundle exec jekyll serve --livereload
